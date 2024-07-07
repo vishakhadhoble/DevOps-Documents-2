@@ -92,8 +92,8 @@ ls ~/.ssh
 
 # Use the private IP addr. of AN1 and AN2
 
-#ssh-copy-id ansibleadmin@172.31.36.144
-#ssh-copy-id ansibleadmin@172.31.33.217
+#ssh-copy-id ansibleadmin@172.31.36.144 (Use private IP for node1)
+#ssh-copy-id ansibleadmin@172.31.33.217 (Use private IP for node2)
 
 ssh ansibleadmin@172.31.36.144
 ssh ansibleadmin@172.31.33.217

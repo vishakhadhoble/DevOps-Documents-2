@@ -28,6 +28,9 @@ vi /etc/ssh/sshd_config
 #Execute Below command to update the changes.
 
 service sshd reload
+##Vishakha: Not working for us.
+##Use below command
+sudo systemctl reload ssh
 
 #As a root user edit below file:
 

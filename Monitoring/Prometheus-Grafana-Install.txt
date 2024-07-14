@@ -45,10 +45,17 @@ ExecStart=/root/prometheus-2.38.0.linux-amd64/prometheus --config.file=/root/pro
 WantedBy=multi-user.target
 
 #-------------------------------------------------------------------------
+Vishakha: Correct the permission
+sudo chown -R root /etc/systemd/system/prometheus.service
+
+Vishakha: Run below commands
 
 sudo systemctl daemon-reload
 sudo systemctl status prometheus
 sudo systemctl start prometheus
+sudo systemctl enable prometheus
+
+sudo systemctl status prometheus
 
 <prometheus-external-ip>:9090
 http://3.108.55.249:9090/
@@ -96,10 +103,13 @@ ExecStart=/root/node_exporter-1.4.0-rc.0.linux-amd64/node_exporter
 WantedBy=multi-user.target
 
 #-------------------------------------------------------------------------
+Vishakha: Below command for access
+sudo chown -R root /etc/systemd/system/node_exporter.service
 
 sudo systemctl daemon-reload
-sudo systemctl status node_exporter
 sudo systemctl start node_exporter
+sudo systemctl enable node_exporter
+sudo systemctl status node_exporter
 
 hostname
 
@@ -140,6 +150,11 @@ http://13.232.146.141:9090/
 
 ###select OSS Edition.
 #Choose Linux
+
+Vishakha: For ubuntu
+sudo apt-get install -y adduser libfontconfig1 musl
+wget https://dl.grafana.com/oss/release/grafana_11.1.0_amd64.deb
+sudo dpkg -i grafana_11.1.0_amd64.deb
 
 ##  Linux Distribution :
 
